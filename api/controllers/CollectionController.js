@@ -26,9 +26,7 @@ module.exports = {
                          return res.view("collection-homepage")
                      }
                   });
-            }
-        });
-    }
+        }
 	
 };
 
