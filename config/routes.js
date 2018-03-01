@@ -11,6 +11,10 @@ module.exports.routes = {
     view: 'homepage'
   },
   '/store/:storename': 'StoreController.storeHomepage',
-  '/store/:storename/:collection': 'CollectionController.collectionHome'
+  '/store/:storename/:collection': 'CollectionController.collectionHome',
+  'GET /register': {
+    view: 'register'
+  },
+  'POST /register': "StoreController.addStore"
 
 };
