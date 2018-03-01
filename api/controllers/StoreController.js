@@ -15,13 +15,13 @@ module.exports = {
         var s = req.params.storename;
         Store.findOne({name: s}).exec(function(err, foundStore){
             if (err) {
-                return req.view("500");
+                return res.view("500");
             }
             else if (foundStore !== null) {
-                return req.view("storehome", {store: foundStore});
+                return res.view("storehome", {store: foundStore});
             }
             else {
-                return req.view("404");
+                return res.view("404");
             }
         });
     }
