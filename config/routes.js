@@ -10,11 +10,23 @@ module.exports.routes = {
   '/': {
     view: 'homepage'
   },
-  '/store/:storename': 'StoreController.storeHomepage',
-  '/store/:storename/:collection': 'CollectionController.collectionHome',
+  '/store': 'CollectionController.collectionHomepage',
   'GET /register': {
     view: 'register'
   },
-  'POST /register': "StoreController.addStore"
+  'POST /register': "StoreController.addStore",
+  'GET /admin': {
+    view: 'admin'
+  },
+  /**
+   * Routes for administration
+   */
+  'GET /admin/collections': 'CollectionController.addCollectionView',
+  'GET /admin/collections/add': {
+    view: "add-collection"
+  },
+  'POST /admin/collections/add': 'CollectionController.addCollection',
+  'GET /admin/collections/:collection/gems': 'GemController.addGemView',
+  'GET /admin/collections/:collection/gems/add': 'GemController.addGem'
 
 };
