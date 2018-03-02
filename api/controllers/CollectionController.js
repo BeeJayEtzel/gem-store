@@ -12,21 +12,37 @@ module.exports = {
      * @description :: fetches a homepage for a given collection
      */
     collectionHomepage: function(req, res){
-        var s = StoreService.storeIdByName(req.params.storename);
-        var c = req.params.collection;
-        Collection.findOne({store: s})
-                  .exec(function(err, foundCollection){
+        Collection.find().exec(function(err, collectionFound){
+            if (err){
+                return res.view("500");
+            }
+            else if (collectionFound === null) {
+                return res.view("404");
+            } else {
+                return res.view("collection-homepage", {
+                    collections: collectionFound
+                });
+            }
+        });
+
+    },
+    /**
+     * addCollection
+     * 
+     * @description ::  Handles a POST request to add a collection to the store 
+     */
+    addCollection: function(req, res){
+        var n = req.body.name;
+        Collection.create({name: n})
+                  .exec(function(err){
                      if (err){
                          return res.view("500");
                      } 
-                     else if (foundCollection === null) {
-                        return res.view("404");
-                     }
                      else {
-                         return res.view("collection-homepage")
+                         return res.redirect("admin-collection-view");
                      }
                   });
-        }
+        },
 	
 };
 
