@@ -1,0 +1,13 @@
+<% for (var i = 0; i < collection.gems.length; i++) { %>
+    <form action="" method="post">
+        <p><%= collection.gems[i].name %>
+            -- $
+            <%= collection.gems[i].price %>
+        </p>
+        <% if (collection.gems[i].onhand < 3) { %>
+            <input type="button" value="Sold Out!" disabled>
+        <% } else { %>
+            <input type="button" value="Buy">
+        <% } %>
+    </form>
+<% } %>
