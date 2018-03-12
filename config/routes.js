@@ -6,7 +6,6 @@
  */
 
 module.exports.routes = {
-
   '/': {
     view: 'homepage'
   },
@@ -31,6 +30,11 @@ module.exports.routes = {
   'GET /admin/collections/:collection/gems/add': {
     view: "add-gem"
   },
-  'POST /admin/collections/:collection/gems/add': 'GemController.addGem'
+  'POST /admin/collections/:collection/gems/add': 'GemController.addGem',
+
+  /**
+   * Routes for store
+   */
+  'GET /store/:collection': 'CollectionController.loadCollection'
 
 };

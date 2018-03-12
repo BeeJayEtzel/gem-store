@@ -43,6 +43,24 @@ module.exports = {
                      }
                   });
         },
+    /**
+     * loadCollection
+     * 
+     * @description ::  Handles request to load a specific collection
+     */
+    loadCollection: function(req, res){
+        var c = req.params.collection;
+        Collection.findOne({id: c})
+                  .populate("gems")
+                  .exec(function(err, collectionFound){
+                     if (err){
+                         return res.view("500");
+                     } 
+                     else {
+                         return res.view("store-collection-view", {collection: collectionFound});
+                     }
+                  });
+        },
 	
 };
 
