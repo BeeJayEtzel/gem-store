@@ -10,11 +10,10 @@ module.exports.routes = {
   '/': {
     view: 'homepage'
   },
-  '/store': 'CollectionController.collectionHomepage',
+  '/store': 'StoreController.homepage' ,
   'GET /register': {
     view: 'register'
   },
-  'POST /register': "StoreController.addStore",
   'GET /admin': {
     view: 'admin'
   },
@@ -26,7 +25,12 @@ module.exports.routes = {
     view: "add-collection"
   },
   'POST /admin/collections/add': 'CollectionController.addCollection',
-  'GET /admin/collections/:collection/gems': 'GemController.addGemView',
-  'GET /admin/collections/:collection/gems/add': 'GemController.addGem'
+  'GET /admin/collections/:collection/gems': {
+    view: "add-gem"
+  },
+  'GET /admin/collections/:collection/gems/add': {
+    view: "add-gem"
+  },
+  'POST /admin/collections/:collection/gems/add': 'GemController.addGem'
 
 };
