@@ -20,6 +20,9 @@ module.exports = {
     price: {
       type: "float"
     },
+    onhand: {
+      type: "integer"
+    },
     collection: {
       model: "collection"
     }
