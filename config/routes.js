@@ -7,6 +7,10 @@
 
 module.exports.routes = {
   '/': {
-    view: 'homepage'
+    view: 'index'
   },
+  'GET /store': 'StoreController.storeHome',
+  'GET /store/:collection': 'CollectionController.collectionHome',
+  'GET /store/:collection/:gem': 'GemController.gemHome',
+
 };
