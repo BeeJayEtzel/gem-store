@@ -7,10 +7,26 @@
 
 module.exports = {
     /**
-     * addCollection
+     * gemHome
      * 
-     * @description ::  Handles a POST request to add a collection to the store 
+     * @description ::  Fetches a gem and loads its project page
      */
+    gemHome: function (req, res) {
+        var c = req.params.collection;
+        var g = req.params.gem;
+        Gem.findOne({collection: c, id: g}).exec(function (err, foundGem){
+            if (err){
+                return res.view("500");
+            }
+            else if (foundGem === null) {
+                return res.view("404");
+            } else {
+                return res.view("gem-homepage", {
+                    gem: foundGem
+                });
+            }
+        });
+    }
 	
 };
 
