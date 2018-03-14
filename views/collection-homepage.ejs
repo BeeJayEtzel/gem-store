@@ -1,0 +1,7 @@
+<div class="container">
+    <% for (var i = 0; i < collection.gems.length; i++) { %>
+        <div class="gem">
+            <p><a href="/store/<%= collection.id %>/<%= collection.gems[i].id %>"><%= collection.gems[i].name %></a></p>
+        </div>
+    <% } %> 
+</div>
