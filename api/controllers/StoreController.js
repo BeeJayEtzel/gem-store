@@ -11,7 +11,7 @@ module.exports = {
      * 
      * @description :: fetches a homepage for the store
      */
-    homepage: function(req, res){
+    storeHome: function(req, res){
         Store.findOne({id: 1}).populate('collections').exec(function(err, foundStore){
             if (err) {
                 return res.view("500");
@@ -20,7 +20,7 @@ module.exports = {
                 return res.view("404");
             }
             else {
-                return res.view("store", {store: foundStore});
+                return res.view("store-homepage", {store: foundStore});
             }
         });
     }
