@@ -1,3 +1,13 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #e2886e;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
 .nav {
     list-style-type: none;
     top: 0;
@@ -29,7 +39,33 @@
     grid-template-columns: repeat(5, 1fr);
 }
 
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px;
+}
+
 .collection {
     background-color: green;
     grid-column: 1fr;
+}
+
+input[type=submit] {
+    background-color: #194940;
+    padding: 5px;
+    border: none;
+    border-radius: 8px;
+    color: #ccc;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+input[type=submit]:hover {
+    background-color: #417972;
+    color: #ccc;
+    transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
 }
