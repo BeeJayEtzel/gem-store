@@ -3,10 +3,24 @@
     margin: 0;
 }
 
+html{
+    height: 100%;
+}
+
 body {
     background-color: #383842;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #ccc;
+}
+
+.index {
+    background-image: url("../images/bg.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: inherit;
 }
 
 .nav {
@@ -41,17 +55,18 @@ body {
 }
 
 .container {
+    padding-top: 20px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 15px;
 }
 
 .collection {
-    background-color: green;
+    color: #ccc;
     grid-column: 1fr;
 }
 
-input[type=submit] {
+input[type=submit], .button {
     background-color: #af964e;
     padding: 5px;
     border: none;
@@ -61,7 +76,7 @@ input[type=submit] {
     letter-spacing: 1px;
 }
 
-input[type=submit]:hover {
+input[type=submit]:hover, .button:hover {
     background-color: #7b6226;
     color: #ccc;
     transition: all 0.3s linear;
@@ -73,4 +88,41 @@ input[type=submit]:hover {
 
 .description{
     padding-top: 5px;
+}
+
+.store-heading {
+    padding-left: 10%;
+    padding-top: 10%;
+}
+
+a.button {
+    text-decoration: none;
+}
+
+
+.img-container {
+    position: relative;
+    font-family: Arial;
+}
+
+.img-text{
+    position: absolute;
+    top: 80px;
+    left: 0px;
+    background-color: rgba(119, 119, 119, 0.8);
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    transform: rotate(-45deg);
+}
+
+.gem-heading a {
+    color: #ccc;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+hr {
+    height: 2px;
+    background-color: rgba(119, 119, 119, 0.8);
 }
