@@ -26,6 +26,36 @@ module.exports = {
                 });
             }
         });
+    },
+    /**
+     * buyGem
+     * 
+     * @description :: Handles logic for purchasing a gem
+     */
+    buyGem: function (req, res) {
+        var g = req.body.id;
+        var newOnHand = 0;
+        Gem.findOne({id: g}).exec(function (err, foundGem){
+            if (err) {
+                console.log("g: " + g);
+                return res.view("500");
+            }
+            else if (foundGem === null) {
+                return res.view("404");
+            }
+            else {
+                newOnHand = foundGem.onhand -1;
+                Gem.update({id: g}, {onhand: newOnHand}, function(err){
+                    if (err) {
+                        return res.view("500");
+                    }
+                    else {
+                        return res.send("Successful purchase!");
+                    }
+                });
+            }
+        });
+
     }
 	
 };
