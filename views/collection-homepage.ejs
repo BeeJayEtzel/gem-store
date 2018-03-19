@@ -2,6 +2,19 @@
     <% for (var i = 0; i < collection.gems.length; i++) { %>
         <div class="gem">
             <p><a href="/store/<%= collection.id %>/<%= collection.gems[i].id %>"><%= collection.gems[i].name %></a></p>
+            <img src="<%= collection.gems[i].picture %>" alt="" width="350px" height="200px">
+            <p><%= collection.gems[i].description %></p>
+            <br>
+            <p>$<%= collection.gems[i].price %></p>
+            <form action="/buyGem" method="post">
+                <input type="hidden" name="id" value="<%= collection.gems[i].id %>">
+                <% if (collection.gems[i].onhand >= 1) { %>
+                    <input type="submit" value="Buy Now">
+                <% } else { %>
+                    <input type="submit" value="Sold Out" disabled>
+                <% } %>
+            </form>
+            <hr>
         </div>
     <% } %> 
 </div>
