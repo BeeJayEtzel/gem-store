@@ -12,5 +12,6 @@ module.exports.routes = {
   'GET /store': 'StoreController.storeHome',
   'GET /store/:collection': 'CollectionController.collectionHome',
   'GET /store/:collection/:gem': 'GemController.gemHome',
+  'POST /buyGem': 'GemController.buyGem'
 
 };
