@@ -4,8 +4,9 @@
 }
 
 body {
-    background-color: #e2886e;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    background-color: #383842;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #ccc;
 }
 
 .nav {
@@ -51,7 +52,7 @@ body {
 }
 
 input[type=submit] {
-    background-color: #194940;
+    background-color: #af964e;
     padding: 5px;
     border: none;
     border-radius: 8px;
@@ -61,11 +62,15 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-    background-color: #417972;
+    background-color: #7b6226;
     color: #ccc;
     transition: all 0.3s linear;
     -webkit-transition: all 0.3s linear;
     -moz-transition: all 0.3s linear;
     -ms-transition: all 0.3s linear;
     -o-transition: all 0.3s linear;
+}
+
+.description{
+    padding-top: 5px;
 }
