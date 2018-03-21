@@ -1,8 +1,6 @@
 <h1 class="store-heading">Browse our collections</h1>
 <div class="container">
     <% for (var i = 0; i < store.collections.length; i++) { %>
-        <div class="button">
-            <a href="/store/<%= store.collections[i].id %>"><%= store.collections[i].name %></a>
-        </div>
+            <a class="button center" href="/store/<%= store.collections[i].id %>"><%= store.collections[i].name %></a>
     <% } %> 
 </div>

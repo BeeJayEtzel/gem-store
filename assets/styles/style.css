@@ -126,3 +126,7 @@ hr {
     height: 2px;
     background-color: rgba(119, 119, 119, 0.8);
 }
+
+.center {
+    text-align: center;
+}
