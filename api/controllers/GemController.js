@@ -44,7 +44,12 @@ module.exports = {
                 return res.view("404");
             }
             else {
-                newOnHand = foundGem.onhand -1;
+                if (req.body.buy) {
+                    newOnHand = foundGem.onhand -1;
+                }
+                else if (req.body.sell) {
+                    newOnHand = foundGem.onhand +1;
+                }
                 Gem.update({id: g}, {onhand: newOnHand}, function(err){
                     if (err) {
                         return res.view("500");
