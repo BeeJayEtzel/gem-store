@@ -86,6 +86,11 @@ input[type=submit]:hover, .button:hover {
     -o-transition: all 0.3s linear;
 }
 
+input[type=submit]:disabled {
+    background-color: #7b6226;
+    color: darkred;
+}
+
 .description{
     padding-top: 5px;
 }
