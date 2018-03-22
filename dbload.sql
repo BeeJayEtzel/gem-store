@@ -1,5 +1,5 @@
 INSERT INTO store (name, phone, email, id, createdAt, updatedAt)
-VALUES ("Gem Emporium", "555-555-5555", "email@gememporium.com", 1, NOW(), NOW())
+VALUES ("Gem Emporium", "555-555-5555", "email@gememporium.com", 1, NOW(), NOW());
 
 INSERT INTO collection (name, store, id, createdAt, updatedAt)
 VALUES ("Birth Stones", 1, 1, NOW(), NOW());
